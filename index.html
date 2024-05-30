@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <title>Drag and Drop</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Lista de productos<br /><span>MEC4.0</span></h1>
+        </header>
+
+        <div class="add-product-container">
+            <input
+            type="text"
+            maxlength="12"
+            id="taskText"
+            placeholder="Producto"
+            onkeydown="if (event.keyCode == 13)
+                            document.getElementById('add').click()"
+            />
+            <button id="add" class="button add-button" onclick="addTask()">
+            Añadir nuevo
+            </button>
+        </div>
+
+        <div class="main-container">
+            <ul class="columns">
+            <li class="column column-1">
+                <div class="column-header">
+                <h4>Nuevos</h4>
+                </div>
+                <ul class="task-list" id="new">
+
+                </ul>
+            </li>
+
+            <li class="column column-2">
+                <div class="column-header">
+                <h4>Comprando</h4>
+                </div>
+                <ul class="task-list" id="shopping">
+
+                </ul>
+            </li>
+
+            <li class="column column-3">
+                <div class="column-header">
+                <h4>En almacén</h4>
+                </div>
+                <ul class="task-list" id="storage">
+
+                </ul>
+            </li>
+
+            <li class="column column-4">
+                <div class="column-header">
+                <h4>Entregados</h4>
+                </div>
+                <ul class="task-list" id="deliveried">
+
+                </ul>
+            </li>
+
+            <li class="column column-5">
+                <div class="column-header">
+                <h4>Trash</h4>
+                </div>
+                <ul class="task-list" id="trash">
+
+                </ul>
+                <div class="column-button">
+                <button class="button delete-button" onclick="emptyTrash()">
+                    Eliminar
+                </button>
+                </div>
+            </li>
+            </ul>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.js"></script>
+        <script src="./src/script.js"></script>
+    </body>
+</html>
